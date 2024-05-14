@@ -5,4 +5,10 @@ Rails.application.routes.draw do
 
   get("/square_root/new", { :controller=>"zebra", :action=>"hyena"})
 
+  get("/payment/new", { :controller=>"zebra", :action=>"tiger"})
+
+  get("/random/new", { :controller=>"zebra", :action=>"bear"})
+
+  
+
 end
