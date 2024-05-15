@@ -23,11 +23,23 @@ class ZebraController < ApplicationController
   end
 
   def hippo
-    render({ :template=> "templates/square_results" })
+    if params[:user_number].present?
+      @the_num = params[:user_number].to_f
+      @the_result = @the_num ** 2
+      render({ :template=> "templates/square_results" })
+    else
+      render({ :template=> "templates/homepage" })
+    end
   end
 
   def mamba
-    render({ :template=> "templates/squarerootresults" })
+    if params[:user_number].present?
+      @the_num = params[:user_number].to_f
+      @the_result = Math.sqrt(@the_num)
+      render({ :template=> "templates/squarerootresults" })
+    else
+      render({ :template=> "templates/squarerootnew" })
+    end 
   end
 
   def giraffe
